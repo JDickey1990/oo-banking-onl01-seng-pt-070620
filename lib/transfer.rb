@@ -23,7 +23,8 @@ def execute_transaction
     end
 
 def reverse_transfer
-  
+   @receiver.balance -= @amount
+  @sender.deposit(@amount)
 end
 
 
