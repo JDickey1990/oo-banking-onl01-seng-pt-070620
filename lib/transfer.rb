@@ -23,11 +23,12 @@ def execute_transaction
     end
 
 def reverse_transfer
-   @sender.balance += @amount
-  @receiver.deposit(@amount)
-  @status = "reversed"
-end
-
-
-
-end
+    if @status == "complete"
+      @sender.balance += amount
+      @receiver.balance -= amount
+      @status = "reversed"
+    else 
+      "Transaction rejected. Please check your account balance."
+    end
+  end
+  
