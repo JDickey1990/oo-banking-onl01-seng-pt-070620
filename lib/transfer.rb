@@ -12,8 +12,8 @@ def valid?
   sender.valid? && receiver.valid?
 end
 
-def execute_transaction
-
+def execute_transaction(sender, receiver,amount)
+  
 end
 
 end
